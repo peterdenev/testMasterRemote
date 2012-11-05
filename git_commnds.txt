@@ -1,0 +1,136 @@
+===========LOCAL==================================================
+git config
+: to say who are you
+----------------------
+git init
+: make a forest in current location (add repository to this folder)
+--------------------
+git status
+: see status
+--------------------
+git log
+: see history
+----------
+git add [--all]
+: mark changed and new files to be added to local server in next commit
+: mark as edited/new
+------------------
+git commit -m "Comment here"
+: submit the files to local server
+wq
+: sace and quit vim
+--------------------
+git commit -a
+: commit all files in project even not added (= add --all + commit)
+--------------------------
+git push
+: submit the files from local server to remote server
+------------------------
+git reset
+: return state of all added files (revert "git add" action)
+------------------------
+git reset --hard
+: return the files to last commited content (revert)
+-----------------------------------
+
+============== DIFF  ================================================
+git diff [{FileName}]
+: compare localFile with stageing file(if there's no stage => local repo)
+---------------------------------
+git diff --staged [{FileName}]
+: compare sgating file with  local repo
+---------------------------------
+git diff HEAD [{FileName}]
+: compare local file with local repo
+-------------------------------------
+gitk
+: open GUI with history of commits
+----------------------------------------
+git log --oneline --all --graph --decorate
+: get a graph with branches and commits in console
+==========LOCAL BACKUP===============================================
+git init --bare
+: create a backup repository in dir
+-----------------------------------
+
+===========REMOTE====================================================
+git remote [-v]
+: view remote locations and paths to them
+------------------------------------------
+git remote add {SomeRemoteName} {PathToRepo}
+: add remote location to can push later
+--------------------------------
+git push {SomeRemoteName} [{branch}]
+: commit to remote server
+----------------------------------
+git init --bare --shared
+: 
+------------------------------------
+git fetch {SomeRemoteName}
+: update from remote server (get changes)
+-------------------------------
+git rebase {SomeRemoteName}
+: applies changes from fetch to local copy
+---------------------------------
+
+
+-----------------------------------------
+git fetch {SomeRemoteName}
+: get from remote server changes (staged)
+-----------------------------------------
+git pull {SomeRemoteName}
+: gfetch + merge = get from remote server changes and add it to (local files)
+------------------------------------------
+git checkout ....
+: 
+------------------------------------------
+git pull -u {SomeRemoteName}
+: 
+------------------------------------------
+
+============BRANCHES=====================================
+git branch
+: return the name of all branches
+----------------------------------
+git branch {nameOfBranch}
+: create branch
+----------------------------------
+git checkout {BranchName}
+: switch the local repo to points to other brantch
+----------------------------------
+git branch -d {branchName}
+: delete branch (delete only pointers to branch, history stays)
+-----------------------------------
+git rebase {BranchName}
+: add commits from the {BranchName} to current branch to the position in time when they are realy commited.
+: 1) return the current brantch to state just before make the other brantch.
+: 2) commit all {branchName} commits
+: 3) commit all current branch commits 
+: ? mixed commits?
+: ? update inner brantch with changes from main?
+===========MERGE==========================================
+git merge {branchName}
+: merge selected branch to(with) current brantch
+----------------------------------------------------------
+ 
+=========== SSH =============================================
+....
+http://net.tutsplus.com/tutorials/tools-and-tips/ssh-what-and-how/
+.....
+==============================================================
+
+
+ 
+
+
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:peterdenev/testMasterRemote.git
+git push -u origin master
+Push an existing repository from the command line
+
+git remote add origin git@github.com:peterdenev/testMasterRemote.git
+git push -u origin master
+
