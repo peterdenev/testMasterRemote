@@ -79,17 +79,14 @@ git fetch {SomeRemoteName}
 : get from remote server changes (staged)
 -----------------------------------------
 git pull {SomeRemoteName}
-: gfetch + merge = get from remote server changes and add it to (local files)
-------------------------------------------
-git checkout ....
-: 
+: fetch + merge = get from remote server changes and add it to (local files)
 ------------------------------------------
 git pull -u {SomeRemoteName}
 : 
 ------------------------------------------
 
 ============BRANCHES=====================================
-git branch
+git branch [-a]
 : return the name of all branches
 ----------------------------------
 git branch {nameOfBranch}
